@@ -8,10 +8,10 @@ export interface FilesGetQueryParams {
   acknowledgeAbuse: boolean;
   /** Whether the requesting application supports both My Drives and shared drives. */
   supportsAllDrives: boolean;
-  /** @deprecated Use supportsAllDrives instead. */
+  /** @deprecated Use `supportsAllDrives` instead. */
   supportsTeamDrives: boolean;
   /** Specifies which additional view's permissions to include in the response. Only 'published' is supported. */
   includePermissionsForView: string;
-  /** A comma-separated list of IDs of labels to include in the labelInfo part of the response. */
+  /** A comma-separated list of IDs of labels to include in the `labelInfo` part of the response. */
   includeLabels: string;
 }

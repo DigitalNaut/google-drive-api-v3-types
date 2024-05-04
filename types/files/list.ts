@@ -22,9 +22,9 @@ export interface FilesListQueryParams {
   driveId: string;
   /** Whether both My Drive and shared drive items should be included in results. */
   includeItemsFromAllDrives: boolean;
-  /** @deprecated Use includeItemsFromAllDrives instead. */
+  /** @deprecated Use `includeItemsFromAllDrives` instead. */
   includeTeamDriveItems: boolean;
-  /** A comma-separated list of sort keys. Valid keys are 'createdTime', 'folder', 'modifiedByMeTime', 'modifiedTime', 'name', 'name_natural', 'quotaBytesUsed', 'recency', 'sharedWithMeTime', 'starred', and 'viewedByMeTime'. Each key sorts ascending by default, but can be reversed with the 'desc' modifier. Example usage: ?orderBy=folder,modifiedTime desc,name. */
+  /** A comma-separated list of sort keys. Valid keys are 'createdTime', 'folder', 'modifiedByMeTime', 'modifiedTime', 'name', 'name_natural', 'quotaBytesUsed', 'recency', 'sharedWithMeTime', 'starred', and 'viewedByMeTime'. Each key sorts ascending by default, but can be reversed with the 'desc' modifier. Example usage: ?orderBy=folder,`modifiedTime` desc,name. */
   orderBy: OrderBy;
   /** The maximum number of files to return per page. Partial or empty result pages are possible even before the end of the files list has been reached. */
   pageSize: number;
@@ -57,6 +57,6 @@ export interface FilesListResponse {
   kind: string;
   /** Whether the search process was incomplete. If true, then some search results might be missing, since all documents were not searched. This can occur when searching multiple drives with the 'allDrives' corpora, but all corpora couldn't be searched. When this happens, it's suggested that clients narrow their query by choosing a different corpus such as 'user' or 'drive'. */
   incompleteSearch: boolean;
-  /** The list of files. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
+  /** The list of files. If `nextPageToken` is populated, then this list may be incomplete and an additional page of results should be fetched. */
   files: File[];
 }

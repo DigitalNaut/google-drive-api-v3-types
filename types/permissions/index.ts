@@ -47,14 +47,14 @@ type PhotoLink = "file" | "member";
 type PermissionsResourceRole = "owner" | PermissionDetailRole;
 
 export interface PermissionResource {
-  /** Output only. The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as permissionId. IDs should be treated as opaque values. */
+  /** Output only. The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as `permissionId`. IDs should be treated as opaque values. */
   id: string;
   /**
    * Output only. The "pretty" name of the value of the permission. The following is a list of examples for each type of permission:
    *  - user - User's full name, as defined for their Google account, such as "Joe Smith."
    *  - group - Name of the Google Group, such as "The Company Administrators."
    *  - domain - String domain name, such as "thecompany.com."
-   *  - anyone - No displayName is present.
+   *  - anyone - No `displayName` is present.
    */
   displayName: DisplayName;
   /**
@@ -100,7 +100,7 @@ export interface PermissionResource {
    *  - The time cannot be more than a year in the future.
    */
   expirationTime: string;
-  /** @deprecated Output only. Use permissionDetails instead. */
+  /** @deprecated Output only. Use `permissionDetails` instead. */
   teamDrivePermissionDetails: TeamDrivePermissionDetail[];
   /** Output only. Whether the account associated with this permission has been deleted. This field only pertains to user and group permissions. */
   deleted: boolean;

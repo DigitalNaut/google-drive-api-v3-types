@@ -70,7 +70,7 @@ export interface DriveResource {
   id: string;
   /** The name of this shared drive. */
   name: string;
-  /** The color of this shared drive as an RGB hex string. It can only be set on a drive.drives.update request that does not set themeId. */
+  /** The color of this shared drive as an RGB hex string. It can only be set on a drive.drives.update request that does not set `themeId`. */
   colorRgb: string;
   /** Output only. Identifies what kind of resource this is. Value: the fixed string "drive#drive". */
   kind: string;
@@ -78,7 +78,7 @@ export interface DriveResource {
   backgroundImageLink: string;
   /** Output only. Capabilities the current user has on this shared drive. */
   capabilities: Capabilities;
-  /** The ID of the theme from which the background image and color will be set. The set of possible driveThemes can be retrieved from a `drive.about.get` response. When not specified on a `drive.drives.create` request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set `colorRgb` or `backgroundImageFile`. */
+  /** The ID of the theme from which the background image and color will be set. The set of possible `driveThemes` can be retrieved from a `drive.about.get` response. When not specified on a `drive.drives.create` request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set `colorRgb` or `backgroundImageFile`. */
   themeId: string;
   /** An image file and cropping parameters from which a background image for this shared drive is set. This is a write only field; it can only be set on `drive.drives.update` requests that don't set `themeId`. When specified, all fields of the `backgroundImageFile` must be set. */
   backgroundImageFile: BackgroundImageFile;

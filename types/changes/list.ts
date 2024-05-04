@@ -13,7 +13,7 @@ export interface ChangesListQueryParams {
   includeTeamDriveItems: boolean;
   /** The maximum number of changes to return per page. */
   pageSize: number;
-  /** The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response or to the response from the getStartPageToken method. */
+  /** The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response or to the response from the `getStartPageToken` method. */
   pageToken: string;
   /** Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive. */
   restrictToMyDrive: boolean;
@@ -27,7 +27,7 @@ export interface ChangesListQueryParams {
   teamDriveId: string;
   /** Specifies which additional view's permissions to include in the response. Only 'published' is supported. */
   includePermissionsForView: string;
-  /** A comma-separated list of IDs of labels to include in the labelInfo part of the response. */
+  /** A comma-separated list of IDs of labels to include in the `labelInfo` part of the response. */
   includeLabels: string;
 }
 
@@ -38,6 +38,6 @@ export interface ChangesListResponse {
   nextPageToken: string;
   /** The starting page token for future changes. This will be present only if the end of the current changes list has been reached. The page token doesn't expire. */
   newStartPageToken: string;
-  /** The list of changes. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
+  /** The list of changes. If `nextPageToken` is populated, then this list may be incomplete and an additional page of results should be fetched. */
   changes: ChangeResource[];
 }

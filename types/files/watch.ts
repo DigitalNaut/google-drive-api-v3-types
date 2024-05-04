@@ -6,7 +6,7 @@ export interface FilesWatchPathParams {
 export interface FilesWatchQueryParams {
   /** Whether the requesting application supports both My Drives and shared drives. */
   supportsAllDrives: boolean;
-  /** @deprecated Use supportsAllDrives instead. */
+  /** @deprecated Use `supportsAllDrives` instead. */
   supportsTeamDrives: boolean;
   /** Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when alt=media. */
   acknowledgeAbuse: boolean;

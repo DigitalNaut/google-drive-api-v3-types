@@ -6,7 +6,7 @@ export interface PermissionsCreatePathParams {
 export interface PermissionsCreateQueryParams {
   /** A plain text custom message to include in the notification email. */
   emailMessage: string;
-  /** @deprecated See moveToNewOwnersRoot for details. */
+  /** @deprecated See `moveToNewOwnersRoot` for details. */
   enforceSingleParent: boolean;
   /** This parameter will only take effect if the item is not in a shared drive and the request is attempting to transfer the ownership of the item. If set to true, the item will be moved to the new owner's My Drive root folder and all prior parents removed. If set to false, parents are not changed. */
   moveToNewOwnersRoot: boolean;

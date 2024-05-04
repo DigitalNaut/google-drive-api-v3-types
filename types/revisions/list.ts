@@ -21,6 +21,6 @@ export interface RevisionsListResponse {
    * Value: the fixed string "drive#revisionList".
    */
   kind: string;
-  /** The list of revisions. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
+  /** The list of revisions. If `nextPageToken` is populated, then this list may be incomplete and an additional page of results should be fetched. */
   revisions: RevisionsResource[];
 }

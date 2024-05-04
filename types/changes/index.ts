@@ -22,6 +22,6 @@ export interface ChangeResource {
   teamDrive: unknown;
   /** The type of the change. Possible values are file and drive. */
   changeType: string;
-  /** The updated state of the shared drive. Present if the changeType is drive, the user is still a member of the shared drive, and the shared drive has not been deleted. */
+  /** The updated state of the shared drive. Present if the `changeType` is drive, the user is still a member of the shared drive, and the shared drive has not been deleted. */
   drive: DriveResource;
 }

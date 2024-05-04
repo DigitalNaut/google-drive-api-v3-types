@@ -25,6 +25,6 @@ export interface ReplyResource {
   deleted: boolean;
   /** Output only. The content of the reply with HTML formatting. */
   htmlContent: string;
-  /** The plain text content of the reply. This field is used for setting the content, while htmlContent should be displayed. This is required on creates if no action is specified. */
+  /** The plain text content of the reply. This field is used for setting the content, while `htmlContent` should be displayed. This is required on creates if no action is specified. */
   content: string;
 }

@@ -1,5 +1,5 @@
 export interface GetStartPageTokenQueryParams {
-  /** The ID of the shared drive for which the starting pageToken for listing future changes from that shared drive will be returned. */
+  /** The ID of the shared drive for which the starting `pageToken` for listing future changes from that shared drive will be returned. */
   driveId: string;
   /** Whether the requesting application supports both My Drives and shared drives. */
   supportsAllDrives: boolean;

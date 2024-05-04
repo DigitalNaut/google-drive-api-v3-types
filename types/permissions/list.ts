@@ -29,6 +29,6 @@ export interface PermissionsListResponse {
    * Value: the fixed string "drive#permissionList".
    */
   kind: string;
-  /** The list of permissions. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched. */
+  /** The list of permissions. If `nextPageToken` is populated, then this list may be incomplete and an additional page of results should be fetched. */
   permissions: PermissionResource[];
 }

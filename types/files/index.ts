@@ -9,9 +9,9 @@ type ContentRestriction = {
   reason: string;
   /** Output only. The type of the content restriction. Currently the only possible value is `globalContentRestriction`. */
   type: string;
-  /** Output only. The user who set the content restriction. Only populated if readOnly is true. */
+  /** Output only. The user who set the content restriction. Only populated if `readOnly` is true. */
   restrictingUser: User;
-  /** Output only. The time at which the content restriction was set (formatted RFC 3339 timestamp). Only populated if readOnly is true. */
+  /** Output only. The time at which the content restriction was set (formatted RFC 3339 timestamp). Only populated if `readOnly` is true. */
   restrictionTime: string;
   /** Whether the content restriction can only be modified or removed by a user who owns the file. For files in shared drives, any user with organizer capabilities can modify or remove this content restriction. */
   ownerRestricted: boolean;
@@ -31,7 +31,7 @@ type Thumbnail = {
 };
 
 type ContentHints = {
-  /** Text to be indexed for the file to improve fullText queries. This is limited to 128KB in length and may contain HTML elements. */
+  /** Text to be indexed for the file to improve `fullText` queries. This is limited to 128KB in length and may contain HTML elements. */
   indexableText: string;
   /** A thumbnail for the file. This will only be used if Google Drive cannot generate a standard thumbnail. */
   thumbnail: Thumbnail;
@@ -106,7 +106,7 @@ type Capabilities = {
   canModifyContentRestriction: boolean;
   /** Output only. Whether the current user can add a folder from another drive (different shared drive or My Drive) to this folder. This is false when the item is not a folder. Only populated for items in shared drives. */
   canAddFolderFromAnotherDrive: boolean;
-  /** Output only. Whether the current user can change the securityUpdateEnabled field on link share metadata. */
+  /** Output only. Whether the current user can change the `securityUpdateEnabled` field on link share metadata. */
   canChangeSecurityUpdateEnabled: boolean;
   /** Output only. Whether the current user is the pending owner of the file. Not populated for shared drive files. */
   canAcceptOwnership: boolean;
@@ -202,7 +202,7 @@ type LinkShareMetadata = {
 };
 
 type LabelInfo = {
-  /** Output only. The set of labels on the file as requested by the label IDs in the includeLabels parameter. By default, no labels are returned. */
+  /** Output only. The set of labels on the file as requested by the label IDs in the `includeLabels` parameter. By default, no labels are returned. */
   labels: Label[];
 };
 
@@ -215,7 +215,7 @@ export interface File {
   kind: string;
   /** Output only. ID of the shared drive the file resides in. Only populated for items in shared drives. */
   driveId: string;
-  /** Output only. The final component of fullFileExtension. This is only available for files with binary content in Google Drive. */
+  /** Output only. The final component of `fullFileExtension`. This is only available for files with binary content in Google Drive. */
   fileExtension: string;
   /** Whether the options to copy, print, or download this file, should be disabled for readers and commenters. */
   copyRequiresWriterPermission: boolean;
@@ -246,7 +246,7 @@ export interface File {
   /**
    * The IDs of the parent folders which contain the file.
    *
-   * If not specified as part of a create request, the file is placed directly in the user's My Drive folder. If not specified as part of a copy request, the file inherits any discoverable parents of the source file. files.update requests must use the addParents and removeParents parameters to modify the parents list.
+   * If not specified as part of a create request, the file is placed directly in the user's My Drive folder. If not specified as part of a copy request, the file inherits any discoverable parents of the source file. files.update requests must use the `addParents` and `removeParents` parameters to modify the parents list.
    */
   parents: string[];
   /** Output only. A short-lived link to the file's thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file's content. If the file isn't shared publicly, the URL returned in `Files.thumbnailLink` must be fetched using a credentialed request. */
@@ -273,12 +273,12 @@ export interface File {
   viewersCanCopyContent: boolean;
   /** Output only. The full list of permissions for the file. This is only available if the requesting user can share the file. Not populated for items in shared drives. */
   permissions: PermissionResource[];
-  /** Output only. Whether this file has a thumbnail. This does not indicate whether the requesting app has access to the thumbnail. To check access, look for the presence of the thumbnailLink field. */
+  /** Output only. Whether this file has a thumbnail. This does not indicate whether the requesting app has access to the thumbnail. To check access, look for the presence of the `thumbnailLink` field. */
   hasThumbnail: boolean;
   /** Output only. The list of spaces which contain the file. The currently supported values are 'drive', 'appDataFolder' and 'photos'. */
   spaces: string[];
   /**
-   * The color for a folder or a shortcut to a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.
+   * The color for a folder or a shortcut to a folder as an RGB hex string. The supported colors are published in the `folderColorPalette` field of the About resource.
    *
    * If an unsupported color is specified, the closest color in the palette is used instead.
    */
@@ -300,7 +300,7 @@ export interface File {
   /**
    * The last time the file was modified by anyone (RFC 3339 date-time).
    *
-   * Note that setting `modifiedTime` also updates modifiedByMeTime for the user.
+   * Note that setting `modifiedTime` also updates `modifiedByMeTime` for the user.
    */
   modifiedTime: string;
   /** Output only. The last time the file was modified by the user (RFC 3339 date-time). */
@@ -309,7 +309,7 @@ export interface File {
   viewedByMeTime: string;
   /** Output only. The time at which the file was shared with the user, if applicable (RFC 3339 date-time). */
   sharedWithMeTime: string;
-  /** Output only. The number of storage quota bytes used by the file. This includes the head revision as well as previous revisions with keepForever enabled. */
+  /** Output only. The number of storage quota bytes used by the file. This includes the head revision as well as previous revisions with `keepForever` enabled. */
   quotaBytesUsed: string;
   /** Output only. A monotonically increasing version number for the file. This reflects every change made to the file on the server, even those not visible to the user. */
   version: string;
@@ -367,7 +367,7 @@ export interface File {
   imageMediaMetadata: ImageMediaMetadata;
   /** Output only. Additional metadata about video media. This may not be available immediately upon upload. */
   videoMediaMetadata: VideoMediaMetadata;
-  /** Shortcut file details. Only populated for shortcut files, which have the mimeType field set to `application/vnd.google-apps.shortcut`. */
+  /** Shortcut file details. Only populated for shortcut files, which have the `mimeType` field set to `application/vnd.google-apps.shortcut`. */
   shortcutDetails: ShortcutDetails;
   /** Restrictions for accessing the content of the file. Only populated if such a restriction exists. */
   contentRestrictions: ContentRestriction[];

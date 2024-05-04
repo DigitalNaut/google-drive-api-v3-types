@@ -11,7 +11,7 @@ export interface ChangesWatchQueryParams {
   includeTeamDriveItems: boolean;
   /** The maximum number of changes to return per page. */
   pageSize: number;
-  /** The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response or to the response from the getStartPageToken method. */
+  /** The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response or to the response from the `getStartPageToken` method. */
   pageToken: string;
   /** Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive. */
   restrictToMyDrive: boolean;
@@ -25,6 +25,6 @@ export interface ChangesWatchQueryParams {
   teamDriveId: string;
   /** Specifies which additional view's permissions to include in the response. Only 'published' is supported. */
   includePermissionsForView: string;
-  /** A comma-separated list of IDs of labels to include in the labelInfo part of the response. */
+  /** A comma-separated list of IDs of labels to include in the `labelInfo` part of the response. */
   includeLabels: string;
 }

@@ -35,7 +35,7 @@ export interface CommentResource {
   deleted: boolean;
   /** Output only. The content of the comment with HTML formatting. */
   htmlContent: string;
-  /** The plain text content of the comment. This field is used for setting the content, while htmlContent should be displayed. */
+  /** The plain text content of the comment. This field is used for setting the content, while `htmlContent` should be displayed. */
   content: string;
   /** The file content to which the comment refers, typically within the anchor region. For a text file, for example, this would be the text at the location of the comment. */
   quotedFileContent: QuotedFileContent;
