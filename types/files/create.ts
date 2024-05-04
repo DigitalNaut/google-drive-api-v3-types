@@ -3,13 +3,9 @@ export interface FilesCreateQueryParams {
    * The type of upload request to the /upload URI. If you are uploading data with an /upload URI, this field is required. If you are creating a metadata-only file, this field is not required. Additionally, this field is not shown in the "Try this method" widget because the widget doesn't support data uploads.
    *
    * Acceptable values are:
-   *
-   *  - media - Simple upload. Upload the media only, without any metadata.
-   * @see https://developers.google.com/drive/api/guides/manage-uploads#simple
-   *  - multipart - Multipart upload. Upload both the media and its metadata, in a single request.
-   * @see https://developers.google.com/drive/api/guides/manage-uploads#multipart
-   *  - resumable - Resumable upload. Upload the file in a resumable fashion, using a series of at least two requests where the first request includes the metadata.
-   * @see https://developers.google.com/drive/api/guides/manage-uploads#resumable
+   *  - media - [Simple upload](https://developers.google.com/drive/api/guides/manage-uploads#simple). Upload the media only, without any metadata.
+   *  - multipart - [Multipart upload](https://developers.google.com/drive/api/guides/manage-uploads#multipart). Upload both the media and its metadata, in a single request.
+   *  - resumable - [Resumable upload](https://developers.google.com/drive/api/guides/manage-uploads#resumable). Upload the file in a resumable fashion, using a series of at least two requests where the first request includes the metadata.
    */
   uploadType: string;
   /** @deprecated Creating files in multiple folders is no longer supported. */

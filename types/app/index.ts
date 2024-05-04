@@ -69,9 +69,7 @@ export interface AppResource {
    *
    * {exportIds}
    *
-   * to be replaced by the actual file IDs. For more information, see Open Files for the full documentation.
-   *
-   * @See https://developers.google.com/drive/api/guides/integrate-open
+   * to be replaced by the actual file IDs. For more information, see [Open Files](https://developers.google.com/drive/api/guides/integrate-open) for the full documentation.
    */
   openUrlTemplate: string;
   /** The URL to create a file with this app. */

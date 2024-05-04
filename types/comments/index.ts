@@ -24,9 +24,7 @@ export interface CommentResource {
   /** Output only. Whether the comment has been resolved by one of its replies. */
   resolved: boolean;
   /**
-   * A region of the document represented as a JSON string. For details on defining anchor properties,  refer to Manage comments and replies.
-   *
-   * @see https://developers.google.com/drive/api/guides/manage-comments
+   * A region of the document represented as a JSON string. For details on defining anchor properties,  refer to [Manage comments and replies](https://developers.google.com/drive/api/guides/manage-comments).
    */
   anchor: string;
   /** Output only. The full list of replies to the comment in chronological order. */
