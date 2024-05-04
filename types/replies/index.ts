@@ -1,3 +1,5 @@
+import { User } from "../user";
+
 export interface ReplyResource {
   /** Output only. The ID of the reply. */
   id: string;

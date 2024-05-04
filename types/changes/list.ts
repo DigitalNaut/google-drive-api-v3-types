@@ -1,3 +1,5 @@
+import { ChangeResource } from ".";
+
 export interface ChangesListQueryParams {
   /** The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier. */
   driveId: string;

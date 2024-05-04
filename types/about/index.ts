@@ -1,3 +1,5 @@
+import { User } from "../user";
+
 /** The user's storage quota limits and usage. All fields are measured in bytes. */
 type StorageQuota = {
   /** The usage limit, if applicable. This will not be present if the user has unlimited storage. */
