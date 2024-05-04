@@ -5,23 +5,8 @@ type LabelType = {
   kind: string;
 };
 
-type DateStringField = {
-  valueType: "dateString";
-  value: string[];
-};
-
-type IntegerField = {
-  valueType: "integer";
-  value: string[];
-};
-
-type SelectionField = {
-  valueType: "selection";
-  value: string[];
-};
-
-type TextField = {
-  valueType: "text";
+type StringField = {
+  valueType: "dateString" | "integer" | "selection" | "text";
   value: string[];
 };
 
@@ -30,8 +15,7 @@ type UserField = {
   value: User[];
 };
 
-type LabelField = LabelType &
-  (DateStringField | IntegerField | SelectionField | TextField | UserField);
+type LabelField = LabelType & (StringField | UserField);
 
 /** Representation of label and label fields. */
 export interface Label {
