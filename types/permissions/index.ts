@@ -109,3 +109,23 @@ interface CommonPermissionFields {
   /** Whether the account associated with this permission is a pending owner. Only populated for user type permissions for files that are not in a shared drive. */
   pendingOwner?: boolean;
 }
+
+interface UserPermission extends CommonPermissionFields {
+  type?: "user" | "group";
+  emailAddress?: string;
+}
+
+interface DomainPermission extends CommonPermissionFields {
+  type?: "domain";
+  domain?: string;
+}
+
+interface AnyonePermission extends CommonPermissionFields {
+  type?: "anyone";
+}
+
+// Define the combined PermissionResource type using a discriminated union
+export type PermissionResource =
+  | UserPermission
+  | DomainPermission
+  | AnyonePermission;
