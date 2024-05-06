@@ -11,9 +11,9 @@ type PermissionDetail = {
    * - file
    * - member
    */
-  permissionType: string;
+  permissionType?: string;
   /** Output only. The ID of the item from which this permission is inherited. This is an output-only field. */
-  inheritedFrom: string;
+  inheritedFrom?: string;
   /**
    * Output only. The primary role for this user. While new values may be added in the future, the following are currently possible:
    * - organizer
@@ -22,33 +22,33 @@ type PermissionDetail = {
    * - committer
    * - reader
    */
-  role: PermissionDetailRole;
+  role?: PermissionDetailRole;
   /** Output only. Whether this permission is inherited. This field is always populated. This is an output-only field. */
-  inherited: boolean;
+  inherited?: boolean;
 };
 
 type TeamDrivePermissionDetail = {
   /** @deprecated Output only. Use `permissionDetails/permissionType` instead. */
-  teamDrivePermissionType: string;
+  teamDrivePermissionType?: string;
   /** @deprecated Output only. Use `permissionDetails/inheritedFrom` instead. */
-  inheritedFrom: string;
+  inheritedFrom?: string;
   /** @deprecated Output only. Use `permissionDetails/role` instead. */
-  role: string;
+  role?: string;
   /** @deprecated Output only. Use `permissionDetails/inherited` instead. */
-  inherited: boolean;
+  inherited?: boolean;
 };
 
 type DisplayName = "user" | "group" | "domain" | "anyone";
 
-type PermissionType = DisplayName;
+type PermissionType = "user" | "group" | "domain" | "anyone";
 
 type PhotoLink = "file" | "member";
 
 type PermissionsResourceRole = "owner" | PermissionDetailRole;
 
-export interface PermissionResource {
+interface CommonPermissionFields {
   /** Output only. The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as `permissionId`. IDs should be treated as opaque values. */
-  id: string;
+  id?: string;
   /**
    * Output only. The "pretty" name of the value of the permission. The following is a list of examples for each type of permission:
    *  - user - User's full name, as defined for their Google account, such as "Joe Smith."
@@ -56,7 +56,7 @@ export interface PermissionResource {
    *  - domain - String domain name, such as "thecompany.com."
    *  - anyone - No `displayName` is present.
    */
-  displayName: DisplayName;
+  displayName?: DisplayName;
   /**
    * The type of the grantee. Valid values are:
    * - user
@@ -66,19 +66,19 @@ export interface PermissionResource {
    *
    * When creating a permission, if `type` is user or group, you must provide an `emailAddress` for the user or group. When `type` is `domain`, you must provide a `domain`. There isn't extra information required for an `anyone` type.
    */
-  type: PermissionType;
+  type?: PermissionType;
   /**
    * Output only. Identifies what kind of resource this is.
    *
    * Value: the fixed string "drive#permission".
    * */
-  kind: string;
+  kind?: string;
   /** Output only. Details of whether the permissions on this shared drive item are inherited or directly on this item. This is an output-only field which is present only for shared drive items. */
-  permissionDetails: PermissionDetail[];
+  permissionDetails?: PermissionDetail[];
   /** Output only. A link to the user's profile photo, if available. */
-  photoLink: PhotoLink;
+  photoLink?: PhotoLink;
   /** The email address of the user or group to which this permission refers. */
-  emailAddress: string;
+  emailAddress?: string;
   /**
    * The role granted by this permission. While new values may be supported in the future, the following are currently allowed:
    * - owner
@@ -88,24 +88,24 @@ export interface PermissionResource {
    * - commenter
    * - reader
    */
-  role: PermissionsResourceRole;
+  role?: PermissionsResourceRole;
   /** Whether the permission allows the file to be discovered through search. This is only applicable for permissions of type domain or anyone. */
-  allowFileDiscovery: boolean;
+  allowFileDiscovery?: boolean;
   /** The domain to which this permission refers. */
-  domain: string;
+  domain?: string;
   /**
    * The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following restrictions:
    *  - They can only be set on user and group permissions.
    *  - The time must be in the future.
    *  - The time cannot be more than a year in the future.
    */
-  expirationTime: string;
+  expirationTime?: string;
   /** @deprecated Output only. Use `permissionDetails` instead. */
-  teamDrivePermissionDetails: TeamDrivePermissionDetail[];
+  teamDrivePermissionDetails?: TeamDrivePermissionDetail[];
   /** Output only. Whether the account associated with this permission has been deleted. This field only pertains to user and group permissions. */
-  deleted: boolean;
+  deleted?: boolean;
   /** Indicates the view for this permission. Only populated for permissions that belong to a view. 'published' is the only supported value. */
-  view: string;
+  view?: string;
   /** Whether the account associated with this permission is a pending owner. Only populated for user type permissions for files that are not in a shared drive. */
-  pendingOwner: boolean;
+  pendingOwner?: boolean;
 }

@@ -7,7 +7,7 @@ export interface FilesModifyLabelsPathParams {
 
 export interface FilesModifyLabelsResponse {
   /** The list of labels which were added or updated by the request. */
-  modifiedLabels: Label[];
+  modifiedLabels?: Label[];
   /** This is always drive#modifyLabelsResponse */
-  kind: string;
+  kind?: string;
 }

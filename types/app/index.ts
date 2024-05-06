@@ -2,64 +2,64 @@ type IconCategory = "application" | "document" | "documentShared";
 
 type AppIcon = {
   /** Size of the icon. Represented as the maximum of the width and height. */
-  size: number;
+  size?: number;
   /**
    * Category of the icon. Allowed values are:
    *  - application - The icon for the application.
    *  - document - The icon for a file associated with the app.
    *  - documentShared - The icon for a shared file associated with the app.
    */
-  category: IconCategory;
+  category?: IconCategory;
   /** URL for the icon. */
-  iconUrl: string;
+  iconUrl?: string;
 };
 
 export interface AppResource {
   /** The name of the app. */
-  name: string;
+  name?: string;
   /** The type of object this app creates such as a Chart. If empty, the app name should be used instead. */
-  objectType: string;
+  objectType?: string;
   /** Whether this app supports creating objects. */
-  supportsCreate: boolean;
+  supportsCreate?: boolean;
   /** A link to the product listing for this app. */
-  productUrl: string;
+  productUrl?: string;
   /** The list of primary MIME types. */
   // TODO: Add MIME type support
 
-  primaryMimeTypes: string[];
+  primaryMimeTypes?: string[];
   /** The list of secondary MIME types. */
   // TODO: Add MIME type support
-  secondaryMimeTypes: string[];
+  secondaryMimeTypes?: string[];
   /** The list of primary file extensions. */
-  primaryFileExtensions: string[];
+  primaryFileExtensions?: string[];
   /** The list of secondary file extensions. */
-  secondaryFileExtensions: string[];
+  secondaryFileExtensions?: string[];
   /** The ID of the app. */
-  id: string;
+  id?: string;
   /** Whether this app supports importing from Google Docs. */
-  supportsImport: boolean;
+  supportsImport?: boolean;
   /** Whether the app is installed. */
-  installed: boolean;
+  installed?: boolean;
   /** Whether the app is authorized to access data on the user's Drive. */
-  authorized: boolean;
+  authorized?: boolean;
   /** The various icons for the app. */
-  icons: AppIcon[];
+  icons?: AppIcon[];
   /** Whether the app is selected as the default handler for the types it supports. */
-  useByDefault: boolean;
+  useByDefault?: boolean;
   /**
    * Output only. Identifies what kind of resource this is.
    *
    * Value: the fixed string "drive#app".
    * */
-  kind: string;
+  kind?: string;
   /** A short description of the app. */
-  shortDescription: string;
+  shortDescription?: string;
   /** A long description of the app. */
-  longDescription: string;
+  longDescription?: string;
   /** Whether this app supports opening more than one file. */
-  supportsMultiOpen: boolean;
+  supportsMultiOpen?: boolean;
   /** The ID of the product listing for this app. */
-  productId: string;
+  productId?: string;
   /**
    * The template URL for opening files with this app. The template contains
    *
@@ -71,13 +71,13 @@ export interface AppResource {
    *
    * to be replaced by the actual file IDs. For more information, see [Open Files](https://developers.google.com/drive/api/guides/integrate-open) for the full documentation.
    */
-  openUrlTemplate: string;
+  openUrlTemplate?: string;
   /** The URL to create a file with this app. */
-  createUrl: string;
+  createUrl?: string;
   /** The template URL to create a file with this app in a given folder. The template contains the {folderId} to be replaced by the folder ID house the new file. */
-  createInFolderTemplate: string;
+  createInFolderTemplate?: string;
   /** Whether this app supports creating files when offline. */
-  supportsOfflineCreate: boolean;
+  supportsOfflineCreate?: boolean;
   /** Whether the app has Drive-wide scope. An app with Drive-wide scope can access all files in the user's Drive. */
-  hasDriveWideScope: boolean;
+  hasDriveWideScope?: boolean;
 }

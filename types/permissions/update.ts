@@ -7,13 +7,13 @@ export interface PermissionsUpdatePathParams {
 
 export interface PermissionsUpdateQueryParams {
   /** Whether to remove the expiration date. */
-  removeExpiration: boolean;
+  removeExpiration?: boolean;
   /** Whether the requesting application supports both My Drives and shared drives. */
-  supportsAllDrives: boolean;
+  supportsAllDrives?: boolean;
   /** @deprecated Use `supportsAllDrives` instead. */
-  supportsTeamDrives: boolean;
+  supportsTeamDrives?: boolean;
   /** Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect. */
-  transferOwnership: boolean;
+  transferOwnership?: boolean;
   /** Issue the request as a domain administrator; if set to true, then the requester will be granted access if the file ID parameter refers to a shared drive and the requester is an administrator of the domain to which the shared drive belongs. */
-  useDomainAdminAccess: boolean;
+  useDomainAdminAccess?: boolean;
 }

@@ -9,5 +9,5 @@ export interface RepliesGetPathParams {
 
 export interface RepliesGetQueryParams {
   /** Whether to return deleted replies. Deleted replies will not include their original content. */
-  includeDeleted: boolean;
+  includeDeleted?: boolean;
 }

@@ -20,11 +20,11 @@ type LabelField = LabelType & (StringField | UserField);
 /** Representation of label and label fields. */
 export interface Label {
   /** The ID of the label. */
-  id: string;
+  id?: string;
   /** The revision ID of the label. */
-  revisionId: string;
+  revisionId?: string;
   /** This is always drive#label */
-  kind: string;
+  kind?: string;
   /**
    * A map of the fields on the label, keyed by the field's ID.
    *
@@ -32,5 +32,5 @@ export interface Label {
    *
    * @example { "name": "wrench", "mass": "1.3kg", "count": "3" }
    */
-  fields: Record<string, LabelField>;
+  fields?: Record<string, LabelField>;
 }
